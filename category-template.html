@@ -20,6 +20,7 @@
           Array.from(document.querySelectorAll('[data-fancybox="gallery"]')),
           {
             dragToClose: false,
+            backdropClick: false,
             on: {
               done: (fancybox, slide) => {
                 if (fancybox.isCurrentSlide(slide)) {

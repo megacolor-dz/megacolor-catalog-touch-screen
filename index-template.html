@@ -9,6 +9,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
     />
+    <link rel="stylesheet" href="css/style.css" />
     <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"></script>
   </head>
   <body>
@@ -18,6 +19,7 @@
         Fancybox.fromNodes(
           Array.from(document.querySelectorAll('[data-fancybox="gallery"]')),
           {
+            dragToClose: false,
             contentClick: false,
             on: {
               reveal: (fancybox, slide) => {

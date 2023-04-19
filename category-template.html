@@ -9,9 +9,8 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
     />
-    <link rel="stylesheet" href="css/justifiedGallery.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"></script>
-    <script src="js/jquery.justifiedGallery.min.js"></script>
   </head>
   <body>
     <div id="gallery" style="display: none"><%ANCHORS%></div>
@@ -20,6 +19,7 @@
         Fancybox.fromNodes(
           Array.from(document.querySelectorAll('[data-fancybox="gallery"]')),
           {
+            dragToClose: false,
             on: {
               done: (fancybox, slide) => {
                 if (fancybox.isCurrentSlide(slide)) {

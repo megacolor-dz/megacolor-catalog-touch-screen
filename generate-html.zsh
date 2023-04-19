@@ -4,7 +4,7 @@ do
   # partial of category anchor in main index.html
   cat_name=$(echo $d | sed 's/.*-\(.*\)-.*/\1/')
   cat_img=$(cat images/$d/default.txt | sed 's/\//\\\//g')
-  cat_anchor_html=$(cat category-anchor-template.html | sed "s/<%HREF%>/${cat_name}.html/" | sed "s/<%SRC%>/images\/$d\/${cat_img}/")
+  cat_anchor_html=$(cat anchor-fancybox-template.html | sed "s/<%PATH%>/images\/$d\/${cat_img}/" | sed "s/<%DESCRIPTION%>/${cat_name}/" | sed "s/<%TARGET%>/${cat_name}.html/" )
   index_anchors_html=${index_anchors_html}${cat_anchor_html}
   # content of category html page
   name=$(cat images/${d}/name.txt)
@@ -18,7 +18,7 @@ do
     cat_index_anchors_html=${cat_index_anchors_html}${anchor_html}
   done
   cat_index_anchors_html=$(echo $cat_index_anchors_html | sed 's/\//\\\//g')
-  cat_index_html=$(cat index-template.html | sed "s/<%ANCHORS%>/${cat_index_anchors_html}/")
+  cat_index_html=$(cat category-template.html | sed "s/<%ANCHORS%>/${cat_index_anchors_html}/")
   echo $cat_index_html > ${cat_name}.html
 done
 index_anchors_html=$(echo $index_anchors_html | sed 's/\//\\\//g')

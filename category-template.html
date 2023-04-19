@@ -9,7 +9,9 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
     />
+    <link rel="stylesheet" href="css/justifiedGallery.min.css" />
     <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"></script>
+    <script src="js/jquery.justifiedGallery.min.js"></script>
   </head>
   <body>
     <div id="gallery" style="display: none"><%ANCHORS%></div>
@@ -18,21 +20,19 @@
         Fancybox.fromNodes(
           Array.from(document.querySelectorAll('[data-fancybox="gallery"]')),
           {
-            contentClick: false,
             on: {
-              reveal: (fancybox, slide) => {
+              done: (fancybox, slide) => {
                 if (fancybox.isCurrentSlide(slide)) {
-                  $("[data-fancybox-close]").remove();
+                  $("[data-fancybox-close]").click(function (e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    window.location.assign("/");
+                  });
                 }
               },
             },
           }
         );
-        $(document).click(".fancybox__slide.is-selected", function () {
-          const index = $(".fancybox__slide.is-selected").attr("data-index");
-          const a = $("#gallery a").eq(index);
-          window.location.assign(a.data("target"));
-        });
       });
     </script>
   </body>

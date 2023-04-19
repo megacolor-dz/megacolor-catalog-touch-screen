@@ -23,6 +23,9 @@
               reveal: (fancybox, slide) => {
                 if (fancybox.isCurrentSlide(slide)) {
                   $("[data-fancybox-close]").remove();
+                  $(".fancybox__caption").click(function (e) {
+                    e.preventDefault();
+                  });
                 }
               },
             },

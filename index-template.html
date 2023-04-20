@@ -20,7 +20,7 @@
           Array.from(document.querySelectorAll('[data-fancybox="gallery"]')),
           {
             caption: (instance, slide, caption) =>
-              `<button class="button">Browse the ${
+              `<button class="btn btn-primary btn-ghost btn-shine">Browse the ${
                 caption.charAt(0).toUpperCase() + caption.slice(1)
               } line products</button>`,
             dragToClose: false,

@@ -17,31 +17,76 @@ html {
   margin-right: 20px !important;
 }
 
-.button {
-  color: #fff;
-  padding: 15px 25px;
-  border-radius: 100px;
-  background-color: #4c43cd;
-  background-image: radial-gradient(
-      93% 87% at 87% 89%,
-      rgba(0, 0, 0, 0.23) 0%,
-      transparent 86.18%
-    ),
-    radial-gradient(
-      66% 87% at 26% 20%,
-      rgba(255, 255, 255, 0.41) 0%,
-      rgba(255, 255, 255, 0) 69.79%,
-      rgba(255, 255, 255, 0) 100%
-    );
-  box-shadow: 2px 19px 31px rgba(0, 0, 0, 0.2);
-  font-weight: bold;
-  font-size: 16px;
+.caption-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  border: 0;
+.btn-back {
+  padding: 0.8rem 1rem !important;
+}
 
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+.vertical-align-middle {
+  vertical-align: middle;
+}
 
+.btn {
+  --hue: 190;
+  position: relative;
+  padding: 0.8rem 2rem;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: hsl(var(--hue), 100%, 41%);
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: hsl(var(--hue), 100%, 41%);
+  border: 1px solid hsl(var(--hue), 100%, 41%);
+  outline: transparent;
+  overflow: hidden;
   cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: 0.25s;
+}
+.btn:active {
+  background: hsl(var(--hue), 100%, 31%);
+}
+.btn-primary {
+  --hue: 187;
+}
+.btn-ghost {
+  color: hsl(var(--hue), 100%, 41%);
+  background-color: transparent;
+  border-color: hsl(var(--hue), 100%, 41%);
+}
+.btn-ghost:active {
+  color: hsl(var(--hue), 100%, 41%);
+}
+.btn-shine {
+  color: hsl(var(--hue), 100%, 41%);
+}
+.btn-shine::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    hsla(var(--hue), 100%, 41%, 0.5),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: 0.6s;
+}
+.btn-shine:active {
+  background: transparent;
+  box-shadow: 0 0 20px 10px hsla(var(--hue), 100%, 41%, 0.5);
+}
+.btn-shine:active::before {
+  transform: translateX(100%);
 }

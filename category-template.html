@@ -20,7 +20,7 @@
           Array.from(document.querySelectorAll('[data-fancybox="gallery"]')),
           {
             caption: (instance, slide, caption) =>
-              `<button class="button float-left mr" onclick="window.location.assign('index.html')">Back to the decorative line</button> ${caption}`,
+              `<div class="caption-container"><div><button class="btn btn-primary btn-ghost btn-shine float-left btn-back mr" onclick="window.location.assign('index.html')"><img class="vertical-align-middle" src="chevron-left-solid.svg" /></button></div><div>${caption}</div></div>`,
             dragToClose: false,
             backdropClick: false,
             on: {

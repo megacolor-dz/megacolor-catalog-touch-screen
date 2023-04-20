@@ -19,6 +19,8 @@
         Fancybox.fromNodes(
           Array.from(document.querySelectorAll('[data-fancybox="gallery"]')),
           {
+            caption: (instance, slide, caption) =>
+              `<button class="button float-left mr" onclick="window.location.assign('index.html')">Back to the decorative line</button> ${caption}`,
             dragToClose: false,
             backdropClick: false,
             on: {

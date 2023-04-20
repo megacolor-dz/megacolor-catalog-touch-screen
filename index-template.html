@@ -19,6 +19,10 @@
         Fancybox.fromNodes(
           Array.from(document.querySelectorAll('[data-fancybox="gallery"]')),
           {
+            caption: (instance, slide, caption) =>
+              `<button class="button">Browse the ${
+                caption.charAt(0).toUpperCase() + caption.slice(1)
+              } line products</button>`,
             dragToClose: false,
             backdropClick: false,
             contentClick: false,
@@ -31,6 +35,7 @@
                   });
                 }
               },
+              "*": (fancybox, eventName) => {},
             },
           }
         );

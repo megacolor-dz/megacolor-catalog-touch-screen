@@ -35,7 +35,28 @@
                   });
                 }
               },
-              "*": (fancybox, eventName) => {},
+              "*": (fancybox, eventName) => {
+                if (
+                  [
+                    "Carousel.Panzoom.ready",
+                    "Carousel.Panzoom.endAnimation",
+                  ].includes(eventName)
+                ) {
+                  const imageContainer = $(
+                    ".fancybox__slide.is-selected .fancybox__content"
+                  );
+                  $("#image-name").remove();
+                  const index = $(".fancybox__slide.is-selected").attr(
+                    "data-index"
+                  );
+                  const a = $("#gallery a").eq(index);
+                  imageContainer.append(
+                    `<div class='image-name reveal' id='image-name'><span>${a.data(
+                      "name"
+                    )} LINE</span></div>`
+                  );
+                }
+              },
             },
           }
         );

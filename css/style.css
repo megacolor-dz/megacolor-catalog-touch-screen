@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap");
 
 html {
   font-family: "DM Serif Display", serif;
@@ -29,6 +30,70 @@ html {
 
 .vertical-align-middle {
   vertical-align: middle;
+}
+
+.image-name {
+  position: absolute;
+  display: block;
+  width: 100%;
+  top: 5vh;
+  padding: 15px 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+@keyframes reveal-text {
+  0% {
+    opacity: 0;
+    transform: translate(100%, 0);
+  }
+  30% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  90% {
+    opacity: 0;
+    transform: translate(-10%, 0);
+  }
+}
+
+@keyframes reveal-text-container {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.image-name span {
+  font-size: 30px;
+  font-family: "Cinzel Decorative", cursive;
+}
+
+.image-name span {
+  opacity: 0;
+}
+
+.image-name.reveal {
+  animation: reveal-text-container 6s;
+  animation-fill-mode: forwards;
+}
+
+.image-name.reveal span {
+  display: block;
+  animation: reveal-text 3.5s cubic-bezier(0.77, 0, 0.175, 1) 1.5s;
+  animation-fill-mode: forwards;
 }
 
 .btn {

@@ -24,8 +24,31 @@ html {
   align-items: center;
 }
 
+.is-prev svg,
+.is-next svg {
+  transform: scale(3);
+}
+
+.reload-btn {
+  position: absolute !important;
+  margin: auto !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 .btn-back {
-  padding: 0.8rem 1rem !important;
+  position: absolute !important;
+  margin: 10px !important;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  padding: 1rem 1.5rem !important;
+}
+
+.fancybox__infobar {
+  display: none;
 }
 
 .vertical-align-middle {
@@ -36,7 +59,7 @@ html {
   position: absolute;
   display: block;
   width: 100%;
-  top: 5vh;
+  top: 0;
   padding: 15px 30px;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
@@ -51,13 +74,9 @@ html {
     opacity: 1;
     transform: translate(0, 0);
   }
-  80% {
+  100% {
     opacity: 1;
     transform: translate(0, 0);
-  }
-  90% {
-    opacity: 0;
-    transform: translate(-10%, 0);
   }
 }
 
@@ -71,9 +90,6 @@ html {
   80% {
     opacity: 1;
   }
-  100% {
-    opacity: 0;
-  }
 }
 
 .image-name span {
@@ -86,28 +102,28 @@ html {
 }
 
 .image-name.reveal {
-  animation: reveal-text-container 6s;
+  animation: reveal-text-container 1s;
   animation-fill-mode: forwards;
 }
 
 .image-name.reveal span {
   display: block;
-  animation: reveal-text 3.5s cubic-bezier(0.77, 0, 0.175, 1) 1.5s;
+  animation: reveal-text 0.75s cubic-bezier(0.77, 0, 0.175, 1) 0.5s;
   animation-fill-mode: forwards;
 }
 
 .btn {
   --hue: 190;
   position: relative;
-  padding: 0.8rem 2rem;
+  padding: 1rem 2rem;
   margin: 0.5rem 0;
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1.5;
   color: hsl(var(--hue), 100%, 41%);
   text-decoration: none;
   text-transform: uppercase;
   background-color: hsl(var(--hue), 100%, 41%);
-  border: 1px solid hsl(var(--hue), 100%, 41%);
+  border: 2px solid hsl(var(--hue), 100%, 41%);
   outline: transparent;
   overflow: hidden;
   cursor: pointer;

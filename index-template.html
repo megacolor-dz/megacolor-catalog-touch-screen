@@ -4,25 +4,28 @@
     <title>Mega Color Interactive Catalogue</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
-    />
+    <script src="js/fancybox.umd.js"></script>
+    <link rel="stylesheet" href="css/fancybox.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"></script>
+    <script src="js/jquery-3.6.4.slim.min.js"></script>
   </head>
   <body>
     <div id="gallery" style="display: none"><%ANCHORS%></div>
+    <button
+      class="btn btn-primary btn-ghost btn-shine reload-btn"
+      onclick="location.reload()"
+    >
+      RELOAD
+    </button>
     <script>
       $(function () {
         Fancybox.fromNodes(
           Array.from(document.querySelectorAll('[data-fancybox="gallery"]')),
           {
             caption: (instance, slide, caption) =>
-              `<button class="btn btn-primary btn-ghost btn-shine">Browse the ${
+              `<button class="btn btn-primary btn-ghost btn-shine">Parcourir les produits de la ligne ${
                 caption.charAt(0).toUpperCase() + caption.slice(1)
-              } line products</button>`,
+              }</button>`,
             dragToClose: false,
             backdropClick: false,
             contentClick: false,

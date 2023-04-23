@@ -167,18 +167,18 @@ html {
   background: hsl(var(--hue), 100%, 31%);
 }
 .btn-primary {
-  --hue: 187;
+  --hue: 0;
 }
 .btn-ghost {
-  color: hsl(var(--hue), 100%, 41%);
+  color: hsl(var(--hue), 0%, 0%);
   background-color: transparent;
-  border-color: hsl(var(--hue), 100%, 41%);
+  border-color: hsl(var(--hue), 0%, 100%);
 }
 .btn-ghost:active {
-  color: hsl(var(--hue), 100%, 41%);
+  color: hsl(var(--hue), 0%, 100%);
 }
 .btn-shine {
-  color: hsl(var(--hue), 100%, 41%);
+  color: hsl(var(--hue), 0%, 100%);
 }
 .btn-shine::before {
   position: absolute;
@@ -190,7 +190,7 @@ html {
   background: linear-gradient(
     120deg,
     transparent,
-    hsla(var(--hue), 100%, 41%, 0.5),
+    hsla(var(--hue), 0%, 100%, 0.5),
     transparent
   );
   transform: translateX(-100%);
@@ -198,7 +198,7 @@ html {
 }
 .btn-shine:active {
   background: transparent;
-  box-shadow: 0 0 20px 10px hsla(var(--hue), 100%, 41%, 0.5);
+  box-shadow: 0 0 20px 10px hsla(var(--hue), 0%, 100%, 0.5);
 }
 .btn-shine:active::before {
   transform: translateX(100%);

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 index_anchors_html=""
-for d in $(ls -d images/*/)
+for d in $(cat categories-to-keep.txt | sed 's/^/images\//' | sed 's/$/\//')
 do
   # partial of category anchor in main index.html
   cat_name=$(echo $d | sed 's/.*-\(.*\)-.*/\1/')

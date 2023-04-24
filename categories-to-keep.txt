@@ -19,6 +19,7 @@
 349-velatura-classica-en
 350-velatura-rustica-en
 351-zephyro-en
+352-zephyro-pearl-en
 421-feel-en
 463-suspense-alluminio-2
 464-suspense-matt-en

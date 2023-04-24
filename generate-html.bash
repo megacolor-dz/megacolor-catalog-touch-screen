@@ -7,11 +7,11 @@ do
   cat_name=$(echo $d | sed 's/.*-\(.*\)-.*/\1/')
   cat_img=$(cat $d/default.txt | sed 's/\//\\\//g')
   dd=$(echo $d | sed 's/\//\\\//g')
-  cat_anchor_html=$(cat anchor-fancybox-template.html | sed "s/<%PATH%>/$dd\/${cat_img}/" | sed "s/<%DESCRIPTION%>/${cat_name}/" | sed "s/<%TARGET%>/${cat_name}.html/" | sed "s/<%NAME%>/${cat_name}/" )
-  index_anchors_html=${index_anchors_html}${cat_anchor_html}
-  # content of category html page
   name=$(cat ${d}/name.txt)
   desc=$(cat ${d}/description.txt)
+  cat_anchor_html=$(cat anchor-fancybox-template.html | sed "s/<%PATH%>/$dd\/${cat_img}/" | sed "s/<%DESCRIPTION%>/${cat_name}/" | sed "s/<%TARGET%>/${cat_name}.html/" | sed "s/<%NAME%>/${name}/" )
+  index_anchors_html=${index_anchors_html}${cat_anchor_html}
+  # content of category html page
   cat_index_anchors_html=""
   for img in $(ls ${d}/*.jpg)
   do
